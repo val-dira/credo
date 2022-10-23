@@ -99,10 +99,6 @@ li:nth-of-type(4) {
     }
 }
 
-@media (max-width: 768px) {
-    
-}
-
 .hero-text h1 {
     font-family: gopher;
      font-size: 48px;
@@ -196,13 +192,16 @@ li:nth-of-type(4) {
     transform: translateY(-5px);
 }
 
-.services-flex-container {
+.services-grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* place-items: center; */
     justify-items: center;
     gap: 30px;
  } 
+
+ .services-flex-container > * {
+    width: 100%;
+ }
 
 @media (max-width: 1024px) {
     .services {
@@ -215,10 +214,9 @@ li:nth-of-type(4) {
      } 
 }
 
-@media (max-width: 768px) {
-    .services-flex-item {
-        padding: 25px;
-        max-width: 319px;
+@media (max-width: 820px) {
+    .services {
+        padding: 7em 3em;
     }
 }
 
@@ -249,33 +247,16 @@ li:nth-of-type(4) {
     color: #666666;
 }
 
-@media (max-width: 768px) {
-    .about {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .about-img {
-        max-width: 690px;
-    }
-
-    .about-text {
-        width: 699px;
-        padding: 30px;
-    }
-
-    .about-text p {
-        max-width: 100%;
-    }
-}
-
 .progress {
     position: relative;
     overflow: visible !important;
     width: 417px;
     margin-bottom: 48px;
+    display: flex;
+    font-size: .75rem;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
 }
-
 
 .progress .progress-bar {
     animation: progress-bar 2s;
@@ -307,14 +288,6 @@ li:nth-of-type(4) {
     background: #fab95b;
     transform: rotate(45deg);
 }
-
-@media (max-width: 768px) {
-    .progress {
-        width: 638px;
-        height: 6px!important;
-    }
-}
-
 
 .about-flex-container {
     padding: 40px;
@@ -388,18 +361,31 @@ li:nth-of-type(4) {
     opacity: 1;
 }
 
-@media (max-width: 768px) {
-    .photo-flex-container {
+@media (max-width: 820px) {
+    .about {
         display: flex;
+        justify-content: center;
+        padding: 88px 0;
         flex-wrap: wrap;
     }
 
-    .photo-flex-3 {
-        margin-right: 323px;
-        margin-top: -29px;
-    } 
+    .about-text p {
+        max-width: 660px;
+    }
+
+   .progress {
+    height: 0.33rem;
+    width: 703px;
+   }
+
+   .about-img {
+    max-width: 709px;
+    margin-bottom: 30px;
 }
 
+}
+
+/* ///////////////////////////////////////////////////// */
 .review h2 {
     font-family: 'gopher', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 32px;
@@ -515,7 +501,7 @@ li:nth-of-type(4) {
     background: #fab95b;
     border-bottom: 1px solid #eee;
     outline: none;
-    width: 1000px;
+    width: 100%;
     padding: 30px;
     display: block;
 }
